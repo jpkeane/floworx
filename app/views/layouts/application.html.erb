@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Floworx</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
+<body data-ma-theme="blue-grey">
+<main class="main">
+  <%= render 'layouts/application/page_loader' %>
+  <%= render 'layouts/application/header' %>
+  <%= render 'layouts/application/left_bar' %>
+  <%= render 'layouts/application/right_bar' %>
+
+
+  <section class="content">
+    <header class="content__title">
+      <h1><%= yield(:title) %></h1>
+    </header>
+
     <%= yield %>
-  </body>
+
+    <%= render 'layouts/application/footer' %>
+  </section>
+</main>
+
+<!-- App functions and actions -->
+</body>
 </html>
