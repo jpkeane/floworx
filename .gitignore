@@ -20,3 +20,5 @@
 
 .idea
 /coverage
+
+/config/master.key
