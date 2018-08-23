@@ -7,5 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Team.destroy_all
+Staff.destroy_all
 
 Rake::Task['seed:teams'].invoke
+Rake::Task['seed:staff'].invoke

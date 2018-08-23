@@ -1,0 +1,27 @@
+<header class="content__title">
+  <h1><%= @staff.full_name %></h1>
+</header>
+<div class="card">
+  <div class="card-block">
+    <div class="tab-container">
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#details" role="tab" aria-expanded="false">Details</a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane fade active show" id="details" role="tabpanel" aria-expanded="false">
+          <dl class="row">
+            <dt class="col-sm-3">First Name</dt>
+            <dd class="col-sm-9"><%= @staff.first_name %></dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-3">Last Name</dt>
+            <dd class="col-sm-9"><%= @staff.last_name %></dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

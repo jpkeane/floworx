@@ -46,9 +46,6 @@ Metrics/BlockLength:
     - 'spec/**/*.rb'
 
 AllCops:
-  Include:
-    - '**/Rakefile'
-    - '**/config.ru'
   Exclude:
     - 'db/**/*'
     - 'script/**/*'

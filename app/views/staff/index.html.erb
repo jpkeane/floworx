@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-header">
+    <h2 class="card-title">All Staff</h2>
+  </div>
+
+  <div class="card-block">
+    <div class="table-responsive">
+      <table class="table table-bordered mb-0">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @staff.each do |staff| %>
+          <tr>
+            <th scope="row"><%= link_to staff.full_name, staff_path(staff) %></th>
+            <td scope="row"><%= staff.email %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

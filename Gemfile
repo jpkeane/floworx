@@ -15,7 +15,6 @@ gem 'puma', '~> 3.11'
 gem 'bcrypt', '~> 3.1.7'
 gem 'friendly_id'
 
-
 # View
 gem 'coffee-rails', '~> 4.2'
 gem 'sass-rails', '~> 5.0'
