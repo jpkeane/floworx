@@ -8,6 +8,8 @@
 
 Team.destroy_all
 Staff.destroy_all
+Client.destroy_all
 
 Rake::Task['seed:teams'].invoke
 Rake::Task['seed:staff'].invoke
+Rake::Task['seed:clients'].invoke

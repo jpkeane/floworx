@@ -1,4 +1,4 @@
-class Team < ApplicationRecord
+class Client < ApplicationRecord
   extend FriendlyId
   friendly_id :code, use: :slugged
 
