@@ -1,20 +1,24 @@
 <aside class="sidebar">
   <div class="scrollbar-inner">
     <ul class="navigation">
-      <li><a href="index.html"><i class="zmdi zmdi-home"></i> Dashboard</a></li>
+      <li>
+        <%= link_to :dashboard do %>
+          <i class="zmdi zmdi-home"></i> Dashboard
+        <% end %>
+      </li>
 
       <li class="navigation__sub">
-        <a href=""><i class="zmdi zmdi-view-week"></i> Resources</a>
+        <a href=""><i class="zmdi zmdi-accounts"></i> Resources</a>
 
         <ul>
           <li><a href="">Overview</a></li>
           <li><a href="">Staff</a></li>
-          <li><a href="">Teams</a></li>
+          <li><%= link_to 'Teams', :teams %></li>
         </ul>
       </li>
 
       <li class="navigation__sub">
-        <a href=""><i class="zmdi zmdi-view-week"></i> Skills</a>
+        <a href=""><i class="zmdi zmdi-star"></i> Skills</a>
 
         <ul>
           <li><a href="">Overview</a></li>

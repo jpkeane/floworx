@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-header">
+    <h2 class="card-title">All Teams</h2>
+  </div>
+
+  <div class="card-block">
+    <div class="table-responsive">
+      <table class="table table-bordered mb-0">
+        <thead>
+        <tr>
+          <th>Code</th>
+          <th>Name</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @teams.each do |team| %>
+          <tr>
+            <th scope="row"><%= link_to team.code, team_path(team) %></th>
+            <td scope="row"><%= team.name %></td>
+            <td>
+              test
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
