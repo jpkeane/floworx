@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_30_074909) do
+ActiveRecord::Schema.define(version: 2018_08_30_084504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 2018_08_30_074909) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "grades", force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "staffs", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
@@ -31,6 +38,8 @@ ActiveRecord::Schema.define(version: 2018_08_30_074909) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "team_id"
+    t.bigint "grade_id"
+    t.index ["grade_id"], name: "index_staffs_on_grade_id"
     t.index ["team_id"], name: "index_staffs_on_team_id"
   end
 
@@ -42,5 +51,6 @@ ActiveRecord::Schema.define(version: 2018_08_30_074909) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "staffs", "grades"
   add_foreign_key "staffs", "teams"
 end

@@ -12,6 +12,7 @@
           <th>Name</th>
           <th>Email</th>
           <th>Team</th>
+          <th>Grade</th>
         </tr>
         </thead>
         <tbody>
@@ -23,6 +24,12 @@
             <td scope="row">
               <% if staff.team %>
                 <%= link_to staff.team.name, staff.team %>
+              <% end %>
+            </td>
+
+            <td scope="row">
+              <% if staff.grade %>
+                <%= staff.grade.name %>
               <% end %>
             </td>
           </tr>

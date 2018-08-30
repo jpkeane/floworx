@@ -1,5 +1,6 @@
 class Staff < ApplicationRecord
   belongs_to :team
+  belongs_to :grade
 
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
@@ -24,5 +25,9 @@ class Staff < ApplicationRecord
   def self.email_user(email_address)
     return unless email_address
     email_address.match(/^(.+?)@/)[1]
+  end
+
+  def self.staff_count
+    Staff.count
   end
 end
