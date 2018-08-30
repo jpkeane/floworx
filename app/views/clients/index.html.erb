@@ -1,0 +1,28 @@
+<% provide(:title, 'All Clients') %>
+<div class="card">
+
+  <div class="card-block">
+    <div class="table-responsive">
+      <table class="table table-bordered mb-0">
+        <thead>
+        <tr>
+          <th>Code</th>
+          <th>Name</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @clients.each do |client| %>
+          <tr>
+            <th scope="row"><%= link_to client.code, client_path(client) %></th>
+            <td scope="row"><%= client.name %></td>
+            <td>
+              test
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
