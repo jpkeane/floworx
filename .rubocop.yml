@@ -19,6 +19,9 @@ UselessAssignment:
 FrozenStringLiteralComment:
   Enabled: false
 
+Metrics/MethodLength:
+  Max: 20
+
 StructInheritance:
   Exclude:
     - 'app/policies/**/*'

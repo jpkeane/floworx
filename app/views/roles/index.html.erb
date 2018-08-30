@@ -7,14 +7,18 @@
         <thead>
         <tr>
           <th>Name</th>
-          <th></th>
+          <th><%= suitability(3) %></th>
+          <th><%= suitability(2) %></th>
+          <th><%= suitability(1) %></th>
         </tr>
         </thead>
         <tbody>
         <% @roles.each do |role| %>
           <tr>
             <th scope="row"><%= link_to role.name, role_path(role) %></th>
-            <td></td>
+            <td><%= role.staff_role_suitabilities.count {|k| k.suitability == 3 } %></td>
+            <td><%= role.staff_role_suitabilities.count {|k| k.suitability == 2 } %></td>
+            <td><%= role.staff_role_suitabilities.count {|k| k.suitability == 1 } %></td>
           </tr>
         <% end %>
         </tbody>

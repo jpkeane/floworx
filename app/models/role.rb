@@ -1,4 +1,7 @@
 class Role < ApplicationRecord
+  has_many :staff_role_suitabilities, dependent: :destroy
+  has_many :staff, through: :staff_role_suitabilities
+
   extend FriendlyId
   friendly_id :name, use: :slugged
 

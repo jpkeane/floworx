@@ -63,6 +63,8 @@ directories:
       enabled: false
     FeatureEnvy:
       enabled: false
+    TooManyStatements:
+      max_statements: 10
   "app/channels":
     IrresponsibleModule:
       enabled: false
