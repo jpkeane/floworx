@@ -9,6 +9,9 @@
         <li class="nav-item">
           <a class="nav-link " data-toggle="tab" href="#roles" role="tab" aria-expanded="true">Roles</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link " data-toggle="tab" href="#skills" role="tab" aria-expanded="true">Skills</a>
+        </li>
       </ul>
 
       <div class="tab-content">
@@ -49,7 +52,27 @@
              </tbody>
            </table>
          </div>
-          </dl>
+        </div>
+
+        <div class="tab-pane fade" id="skills" role="tabpanel" aria-expanded="false">
+          <div class="table-responsive">
+            <table class="table table-bordered mb-0">
+              <thead>
+              <tr>
+                <th>Name</th>
+                <th>Suitability</th>
+              </tr>
+              </thead>
+              <tbody>
+              <% @staff.staff_skill_levels.each do |ssl| %>
+                <tr>
+                  <th scope="row"><%= link_to ssl.skill.name, skill_path(ssl.skill) %></th>
+                  <td scope="row"><%= suitability(ssl.level) %></td>
+                </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

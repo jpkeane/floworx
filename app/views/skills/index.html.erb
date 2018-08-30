@@ -1,0 +1,28 @@
+<% provide(:title, 'All Skills') %>
+<div class="card">
+
+  <div class="card-block">
+    <div class="table-responsive">
+      <table class="table table-bordered mb-0">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th><%= suitability(3) %></th>
+          <th><%= suitability(2) %></th>
+          <th><%= suitability(1) %></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @skills.each do |skill| %>
+          <tr>
+            <th scope="row"><%= link_to skill.name, skill_path(skill) %></th>
+            <td><%= skill.staff_skill_levels.count {|k| k.level == 3 } %></td>
+            <td><%= skill.staff_skill_levels.count {|k| k.level == 2 } %></td>
+            <td><%= skill.staff_skill_levels.count {|k| k.level == 1 } %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :grades, only: %i[index show]
   resources :projects, only: %i[index show]
   resources :roles, only: %i[index show]
+  resources :skills, only: %i[index show]
   root 'front_pages#home'
 end

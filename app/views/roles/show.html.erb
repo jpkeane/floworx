@@ -20,19 +20,26 @@
         </div>
 
         <div class="tab-pane fade" id="members" role="tabpanel" aria-expanded="true">
-            <div class="table-responsive">
-              <table class="table table-bordered mb-0">
-                <thead>
+          <div class="table-responsive">
+            <table class="table table-bordered mb-0">
+              <thead>
+              <tr>
+                <th>Name</th>
+                <th>Team</th>
+                <th>Level</th>
+              </tr>
+              </thead>
+              <tbody>
+              <% @role.staff_role_suitabilities.each do |srs| %>
                 <tr>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Team</th>
+                  <th scope="row"><%= link_to srs.staff.full_name, staff_path(srs.staff) %></th>
+                  <td scope="row"><%= link_to srs.staff.team.name, team_path(srs.staff.team) %></td>
+                  <td scope="row"><%= suitability(srs.suitability) %></td>
                 </tr>
-                </thead>
-                <tbody>
-                </tbody>
-              </table>
-            </div>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

@@ -1,0 +1,47 @@
+<% provide(:title, @skill.name) %>
+<div class="card">
+  <div class="card-block">
+    <div class="tab-container">
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#details" role="tab" aria-expanded="false">Details</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " data-toggle="tab" href="#members" role="tab" aria-expanded="true">Members</a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane fade active show" id="details" role="tabpanel" aria-expanded="false">
+          <dl class="row">
+            <dt class="col-sm-3">Skill Name</dt>
+            <dd class="col-sm-9"><%= @skill.name %></dd>
+          </dl>
+        </div>
+
+        <div class="tab-pane fade" id="members" role="tabpanel" aria-expanded="true">
+            <div class="table-responsive">
+              <table class="table table-bordered mb-0">
+                <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Team</th>
+                  <th>Level</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% @skill.staff_skill_levels.each do |ssl| %>
+                  <tr>
+                    <th scope="row"><%= link_to ssl.staff.full_name, staff_path(ssl.staff) %></th>
+                    <td scope="row"><%= link_to ssl.staff.team.name, team_path(ssl.staff.team) %></td>
+                    <td scope="row"><%= suitability(ssl.level) %></td>
+                  </tr>
+                <% end %>
+                </tbody>
+              </table>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -3,6 +3,8 @@ class Staff < ApplicationRecord
   belongs_to :grade
   has_many :staff_role_suitabilities, dependent: :destroy
   has_many :roles, through: :staff_role_suitabilities
+  has_many :staff_skill_levels, dependent: :destroy
+  has_many :skills, through: :staff_skill_levels
 
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
