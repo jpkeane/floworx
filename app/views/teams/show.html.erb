@@ -1,7 +1,4 @@
 <% provide(:title, @team.name) %>
-<header class="content__title">
-  <h1><%= @team.name %></h1>
-</header>
 <div class="card">
   <div class="card-block">
     <div class="tab-container">
@@ -27,7 +24,24 @@
         </div>
 
         <div class="tab-pane fade" id="members" role="tabpanel" aria-expanded="true">
-
+            <div class="table-responsive">
+              <table class="table table-bordered mb-0">
+                <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% @team.staff.each do |staff| %>
+                  <tr>
+                    <th scope="row"><%= link_to staff.full_name, staff_path(staff) %></th>
+                    <td scope="row"><%= staff.email %></td>
+                  </tr>
+                <% end %>
+                </tbody>
+              </table>
+            </div>
         </div>
       </div>
     </div>

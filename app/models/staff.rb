@@ -1,4 +1,6 @@
 class Staff < ApplicationRecord
+  belongs_to :team
+
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
 

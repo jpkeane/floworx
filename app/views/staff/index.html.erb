@@ -11,6 +11,7 @@
         <tr>
           <th>Name</th>
           <th>Email</th>
+          <th>Team</th>
         </tr>
         </thead>
         <tbody>
@@ -18,6 +19,12 @@
           <tr>
             <th scope="row"><%= link_to staff.full_name, staff_path(staff) %></th>
             <td scope="row"><%= staff.email %></td>
+
+            <td scope="row">
+              <% if staff.team %>
+                <%= link_to staff.team.name, staff.team %>
+              <% end %>
+            </td>
           </tr>
         <% end %>
         </tbody>
