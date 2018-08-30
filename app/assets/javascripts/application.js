@@ -17,6 +17,9 @@
 //= require waves/waves
 //= require jquery.scrollbar/jquery.scrollbar
 //= require jquery-scrollLock/jquery-scrollLock
+//= require jquery.easy-pie-chart/jquery.easy-pie-chart
+//= require wrap/other-charts
+// Bower
 //
 //= require autosize/autosize
 //

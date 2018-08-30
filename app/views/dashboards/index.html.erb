@@ -61,3 +61,15 @@
     </div>
   </div>
 </div>
+<div class="row">
+  <div class="col-sm-6 col-md-3">
+    <div class="card card--inverse widget-pie">
+      <div class="col-6 col-sm-4 col-md-6 col-lg-4 widget-pie__item">
+        <div class="easy-pie-chart" data-percent="<%= Engagement.utilisation.round.to_s %>" data-size="80" data-track-color="rgba(0,0,0,0.08)" data-bar-color="#fff">
+          <span class="easy-pie-chart__value" style="line-height: 80px; font-size: 20px; color: rgb(255, 255, 255);"><%= Engagement.utilisation.round.to_s %></span>
+          <canvas height="80" width="80"></canvas></div>
+        <div class="widget-pie__title">Utilisation</div>
+      </div>
+    </div>
+  </div>
+</div>

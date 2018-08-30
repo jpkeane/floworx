@@ -5,6 +5,7 @@ class Staff < ApplicationRecord
   has_many :roles, through: :staff_role_suitabilities
   has_many :staff_skill_levels, dependent: :destroy
   has_many :skills, through: :staff_skill_levels
+  has_one :engagement, dependent: :nullify
 
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged

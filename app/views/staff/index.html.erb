@@ -13,6 +13,7 @@
           <th>Email</th>
           <th>Team</th>
           <th>Grade</th>
+          <th>Assignment</th>
         </tr>
         </thead>
         <tbody>
@@ -26,10 +27,16 @@
                 <%= link_to staff.team.name, staff.team %>
               <% end %>
             </td>
-
             <td scope="row">
               <% if staff.grade %>
                 <%= staff.grade.name %>
+              <% end %>
+            </td>
+            <td>
+              <% if staff.engagement %>
+                <%= link_to staff.engagement.full_code, staff.engagement %>
+              <% else %>
+                <span class="badge badge-danger">Bench</span>
               <% end %>
             </td>
           </tr>
