@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :clients, only: %i[index show]
   resources :grades, only: %i[index show]
   resources :projects, only: %i[index show]
+  resources :roles, only: %i[index show]
   root 'front_pages#home'
 end
