@@ -71,4 +71,40 @@ namespace :seed do
                                               suitability: p['Suitability'])
     end
   end
+
+  task skills: :environment do
+    csv_path = Rails.root.join('db', 'seeds', 'skills.csv')
+    skills = CSV.read(csv_path, headers: true)
+
+    skills.each do |p|
+      Skill.find_or_create_by!(name: p['Name'],
+                               slug: p['Slug'])
+    end
+  end
+
+  task staff_skill_level: :environment do
+    csv_path = Rails.root.join('db', 'seeds', 'staff_skill_level.csv')
+    ssl = CSV.read(csv_path, headers: true)
+
+    ssl.each do |p|
+      staff = Staff.find_by(slug: p['Staff Slug'])
+      skill = Skill.find_by(slug: p['Skill Slug'])
+      StaffSkillLevel.find_or_create_by!(staff: staff,
+                                         skill: skill,
+                                         level: p['Level'])
+    end
+  end
+
+  task projects: :environment do
+    csv_path = Rails.root.join('db', 'seeds', 'projects.csv')
+    project = CSV.read(csv_path, headers: true)
+
+    project.each do |p|
+      client = Client.find_by(slug: p['Client Slug'])
+      Project.find_or_create_by!(client: client,
+                                 name: p['Name'],
+                                 code: p['Code'],
+                                 slug: p['Slug'])
+    end
+  end
 end

@@ -1,5 +1,6 @@
 Name,Code,Slug
-BP,BP,BP
-Marks and Spencer,MNS,MNS
-John Lewis,JL,JL
-REPL Group,INT,INT
+BP,BP,bp
+Marks and Spencer,MNS,mns
+John Lewis,JL,jl
+REPL Group,INT,int
+Mothercare,MC,mc
