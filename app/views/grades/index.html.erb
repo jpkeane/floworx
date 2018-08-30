@@ -1,0 +1,27 @@
+<% provide(:title, 'All Grades') %>
+<div class="card">
+  <div class="card-header">
+    <h2 class="card-title">All Grades</h2>
+  </div>
+
+  <div class="card-block">
+    <div class="table-responsive">
+      <table class="table table-bordered mb-0">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Members</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @grades.each do |grade| %>
+          <tr>
+            <th scope="row"><%= link_to grade.name, grade_path(grade) %></th>
+            <td><%= grade.staff.count %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
