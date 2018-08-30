@@ -22,4 +22,16 @@ class Engagement < ApplicationRecord
   def self.engagement_count
     Engagement.count
   end
+
+  def self.staff_assigned
+    Engagement.distinct.count(:staff_id)
+  end
+
+  def self.bench_count
+    Staff.staff_count - Engagement.staff_assigned
+  end
+
+  def self.utilisation
+    (Engagement.staff_assigned.to_f / Staff.staff_count.to_f) * 100
+  end
 end
