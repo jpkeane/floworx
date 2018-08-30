@@ -1,5 +1,6 @@
 class Client < ApplicationRecord
   has_many :projects, dependent: :destroy
+  has_many :engagements, through: :projects
 
   extend FriendlyId
   friendly_id :code, use: :slugged

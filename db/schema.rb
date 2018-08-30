@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_30_125906) do
+ActiveRecord::Schema.define(version: 2018_08_30_141935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,20 @@ ActiveRecord::Schema.define(version: 2018_08_30_125906) do
     t.string "slug", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "engagements", force: :cascade do |t|
+    t.bigint "project_id"
+    t.bigint "role_id"
+    t.date "start_date", null: false
+    t.date "end_date", null: false
+    t.bigint "staff_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["project_id"], name: "index_engagements_on_project_id"
+    t.index ["role_id"], name: "index_engagements_on_role_id"
+    t.index ["staff_id"], name: "index_engagements_on_staff_id"
   end
 
   create_table "grades", force: :cascade do |t|
@@ -95,6 +109,9 @@ ActiveRecord::Schema.define(version: 2018_08_30_125906) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "engagements", "projects"
+  add_foreign_key "engagements", "roles"
+  add_foreign_key "engagements", "staffs"
   add_foreign_key "staff_role_suitabilities", "roles"
   add_foreign_key "staff_role_suitabilities", "staffs"
   add_foreign_key "staff_skill_levels", "skills"

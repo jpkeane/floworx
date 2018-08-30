@@ -1,5 +1,6 @@
 class Project < ApplicationRecord
   belongs_to :client
+  has_many :engagements, dependent: :nullify
 
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged

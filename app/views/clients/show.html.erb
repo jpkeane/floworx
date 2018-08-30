@@ -24,24 +24,24 @@
         </div>
 
         <div class="tab-pane fade" id="projects" role="tabpanel" aria-expanded="true">
-            <div class="table-responsive">
-              <table class="table table-bordered mb-0">
-                <thead>
+          <div class="table-responsive">
+            <table class="table table-bordered mb-0">
+              <thead>
+              <tr>
+                <th>Code</th>
+                <th>Name</th>
+              </tr>
+              </thead>
+              <tbody>
+              <% @client.projects.each do |project| %>
                 <tr>
-                  <th>Code</th>
-                  <th>Name</th>
+                  <td scope="row"><%= link_to project.full_code, project_path(project) %></td>
+                  <th scope="row"><%= link_to project.name, project_path(project) %></th>
                 </tr>
-                </thead>
-                <tbody>
-                <% @client.projects.each do |project| %>
-                  <tr>
-                    <td scope="row"><%= link_to project.full_code, project_path(project) %></td>
-                    <th scope="row"><%= link_to project.name, project_path(project) %></th>
-                  </tr>
-                <% end %>
-                </tbody>
-              </table>
-            </div>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

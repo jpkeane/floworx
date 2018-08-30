@@ -8,7 +8,8 @@
         <tr>
           <th>Code</th>
           <th>Name</th>
-          <th></th>
+          <th>Projects</th>
+          <th>Engagements</th>
         </tr>
         </thead>
         <tbody>
@@ -16,9 +17,8 @@
           <tr>
             <th scope="row"><%= link_to client.code, client_path(client) %></th>
             <td scope="row"><%= client.name %></td>
-            <td>
-              test
-            </td>
+            <td><%= client.projects.count %></td>
+            <td><%= client.engagements.count %></td>
           </tr>
         <% end %>
         </tbody>

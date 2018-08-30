@@ -1,0 +1,33 @@
+<% provide(:title, @engagement.full_code) %>
+<div class="card">
+  <div class="card-block">
+    <div class="tab-container">
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#details" role="tab" aria-expanded="false">Details</a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane fade active show" id="details" role="tabpanel" aria-expanded="false">
+          <dl class="row">
+            <dt class="col-sm-3">Client Name</dt>
+            <dd class="col-sm-9"><%= link_to @engagement.project.client.name, client_path(@engagement.project.client) %></dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-3">Project</dt>
+            <dd class="col-sm-9"><%= link_to @engagement.project.name, project_path(@engagement.project) %></dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-3">Role</dt>
+            <dd class="col-sm-9"><%= link_to @engagement.role.name, role_path(@engagement.role) %></dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-3">Assigned</dt>
+            <dd class="col-sm-9"><%= link_to @engagement.staff.full_name, staff_path(@engagement.staff) %></dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

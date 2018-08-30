@@ -107,4 +107,20 @@ namespace :seed do
                                  slug: p['Slug'])
     end
   end
+
+  task engagements: :environment do
+    csv_path = Rails.root.join('db', 'seeds', 'engagements.csv')
+    engagements = CSV.read(csv_path, headers: true)
+
+    engagements.each do |p|
+      project = Project.find_by(slug: p['Project Slug'])
+      role = Role.find_by(slug: p['Role Slug'])
+      staff = Staff.find_by(slug: p['Staff Slug'])
+      Engagement.find_or_create_by!(project: project,
+                                    role: role,
+                                    staff: staff,
+                                    start_date: p['Start Date'],
+                                    end_date: p['End Date'])
+    end
+  end
 end

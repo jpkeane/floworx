@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Engagement.destroy_all
 Role.destroy_all
 Skill.destroy_all
 Grade.destroy_all
@@ -25,3 +26,4 @@ Rake::Task['seed:staff_role_suitability'].invoke
 Rake::Task['seed:staff_skill_level'].invoke
 Rake::Task['seed:clients'].invoke
 Rake::Task['seed:projects'].invoke
+Rake::Task['seed:engagements'].invoke
