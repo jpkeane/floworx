@@ -1,0 +1,26 @@
+<% provide(:title, 'All Projects') %>
+<div class="card">
+
+  <div class="card-block">
+    <div class="table-responsive">
+      <table class="table table-bordered mb-0">
+        <thead>
+        <tr>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Client</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @projects.each do |project| %>
+          <tr>
+            <th scope="row"><%= link_to project.full_code, project_path(project) %></th>
+            <td scope="row"><%= project.name %></td>
+            <td><%= link_to project.client.name, client_path(project.client) %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
