@@ -30,6 +30,7 @@
                 <tr>
                   <th>Name</th>
                   <th>Email</th>
+                  <th>Team</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -37,6 +38,7 @@
                   <tr>
                     <th scope="row"><%= link_to staff.full_name, staff_path(staff) %></th>
                     <td scope="row"><%= staff.email %></td>
+                    <td scope="row"><%= link_to staff.team.name, team_path(staff.team) %></td>
                   </tr>
                 <% end %>
                 </tbody>
