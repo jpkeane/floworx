@@ -1,5 +1,5 @@
 class Team < ApplicationRecord
-  has_many :staff
+  has_many :staff, dependent: :nullify
 
   extend FriendlyId
   friendly_id :code, use: :slugged
