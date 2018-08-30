@@ -1,4 +1,4 @@
-First Name,Last Name,Email,Slug
-James,Keane,james.keane@replgroup.com,james-keane
-Steve,Stevens,steve.stevens@replgroup.com,steve-stevens
-Brad,Bingham,brad.bingham@replgroup.com,brad-bingham
+First Name,Last Name,Email,Slug,Team Slug,Grade Slug
+James,Keane,james.keane@replgroup.com,james-keane,con,principal-consultant
+Steve,Stevens,steve.stevens@replgroup.com,steve-stevens,wfm,senior-consultant
+Brad,Bingham,brad.bingham@replgroup.com,brad-bingham,wms,graduate-consultant
