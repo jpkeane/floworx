@@ -2,8 +2,9 @@ class Team < ApplicationRecord
   has_many :staff, dependent: :nullify
 
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :code, use: :slugged
 
   validates :name, presence: true, length: { maximum: 30 }
-  validates :slug, presence: true, uniqueness: { case_sensitive: false }
+  validates :code, presence: true, length: { minimum: 1, maximum: 3 }, uniqueness: { case_sensitive: false }
+  validates :slug, presence: true, length: { minimum: 1, maximum: 3 }, uniqueness: { case_sensitive: false }
 end
