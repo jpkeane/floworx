@@ -1,28 +1,39 @@
 <% provide(:title, 'All Clients') %>
-<div class="card">
-
-  <div class="card-block">
-    <div class="table-responsive">
-      <table class="table table-bordered mb-0">
-        <thead>
-        <tr>
-          <th>Code</th>
-          <th>Name</th>
-          <th>Projects</th>
-          <th>Engagements</th>
-        </tr>
-        </thead>
-        <tbody>
-        <% @clients.each do |client| %>
-          <tr>
-            <th scope="row"><%= link_to client.code, client_path(client) %></th>
-            <td scope="row"><%= client.name %></td>
-            <td><%= client.projects.count %></td>
-            <td><%= client.engagements.count %></td>
-          </tr>
-        <% end %>
-        </tbody>
-      </table>
+<div class="card issue-tracker">
+  <div class="toolbar toolbar--inner">
+    <div class="toolbar__nav">
+      <a class="active" href="">Opened 25</a>
     </div>
+
+    <div class="actions">
+
+      <%= link_to new_client_path do %>
+        <i class="actions__item zmdi zmdi-search" data-title="Search"></i>
+      <% end %>
+    </div>
+
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-bordered mb-0">
+      <thead>
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Projects</th>
+        <th>Engagements</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @clients.each do |client| %>
+        <tr>
+          <th scope="row"><%= link_to client.code, client_path(client) %></th>
+          <td scope="row"><%= client.name %></td>
+          <td><%= client.projects.count %></td>
+          <td><%= client.engagements.count %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
   </div>
 </div>

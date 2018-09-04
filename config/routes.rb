@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :teams, only: %i[index show]
   resources :staff, only: %i[index show]
-  resources :clients, only: %i[index show]
+  resources :clients
   resources :grades, only: %i[index show]
   resources :projects, only: %i[index show]
   resources :roles, only: %i[index show]

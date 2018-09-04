@@ -1,0 +1,26 @@
+<% provide(:title, 'New Client') %>
+<div class="card">
+  <div class="card-block">
+    <div class="card-body">
+
+      <%= form_for(@client, class: 'row') do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.label :name, 'Client Name' %>
+            <%= f.text_field :name, class: 'form-control', placeholder: 'Example Company' %>
+            <i class="form-group__bar"></i>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :code, 'Client Code' %>
+            <%= f.text_field :code, class: 'form-control', placeholder: 'EXM' %>
+            <i class="form-group__bar"></i>
+          </div>
+        </div>
+        <%= f.submit 'Create Client', class: 'btn btn-primary' %>
+    <% end %>
+    </div>
+  </div>
+</div>
+</div>

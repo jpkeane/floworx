@@ -18,3 +18,10 @@
 
 @import "jquery.easy-pie-chart/jquery.easy-pie-chart";
 @import "wrap/app";
+
+.field_with_errors {
+  label{
+    color: #d9534f;
+    font-weight: bold;
+  }
+}
